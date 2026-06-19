@@ -1,4 +1,4 @@
-const CACHE_NAME = "chart-sense-game-v1";
+const CACHE_NAME = "chart-sense-game-v2";
 const ASSETS = [
   "./",
   "./index.html",

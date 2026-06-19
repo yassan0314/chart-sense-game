@@ -689,9 +689,10 @@ canvas {
 
 .celebration {
   pointer-events: none;
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 50%;
+  z-index: 60;
   display: grid;
   place-items: center;
   gap: 6px;
@@ -723,9 +724,10 @@ canvas {
 
 .confetti {
   pointer-events: none;
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 48%;
+  z-index: 59;
   width: 10px;
   height: 16px;
   border-radius: 2px;
@@ -1138,18 +1140,196 @@ footer {
 }
 
 @media (max-width: 560px) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    background: #fff;
+  }
+
   main,
   footer {
-    width: min(100% - 18px, 1180px);
+    width: 100%;
   }
 
   .app-header {
-    padding: 14px 12px;
+    position: static;
+    padding: 10px 12px;
   }
 
-  .market-board {
+  .app-header .eyebrow,
+  .top-nav,
+  .market-board,
+  #principles,
+  #lessons,
+  #patterns,
+  #risk,
+  footer {
+    display: none;
+  }
+
+  h1 {
+    font-size: 1.05rem;
+  }
+
+  .section-shell {
+    margin: 0;
+    padding: 10px;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .game-section {
+    min-height: calc(100svh - 52px);
+  }
+
+  .game-section > .section-heading {
+    display: grid;
+    gap: 8px;
+  }
+
+  .game-section > .section-heading h2 {
+    margin-top: 2px;
+    font-size: 1.16rem;
+  }
+
+  .game-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .game-stats div {
+    min-width: 0;
+    padding: 7px 8px;
+  }
+
+  .game-stats span {
+    font-size: 0.68rem;
+  }
+
+  .game-stats strong {
+    font-size: 0.96rem;
+  }
+
+  .game-layout {
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .stage-banner {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 8px;
+    padding: 9px 10px;
+  }
+
+  .stage-banner span {
+    min-height: 28px;
+    padding: 0 9px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  .stage-banner strong {
+    font-size: 0.94rem;
+  }
+
+  .mission-hud {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+
+  .mission-hud div {
+    padding: 7px 8px;
+  }
+
+  .mission-hud span {
+    font-size: 0.62rem;
+  }
+
+  .mission-hud strong {
+    font-size: 0.82rem;
+  }
+
+  .timer-track {
+    height: 8px;
+    margin-bottom: 8px;
+  }
+
+  canvas {
+    display: block;
     min-height: 0;
-    padding-top: 30px;
+    height: min(42svh, 310px);
+  }
+
+  .round-pips {
+    margin-top: 8px;
+  }
+
+  .game-panel {
+    gap: 9px;
+    padding: 10px;
+  }
+
+  .game-panel h3 {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  #scenarioQuestion,
+  #gameChecklist,
+  .reward-box {
+    display: none;
+  }
+
+  .choice-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .choice-button {
+    min-height: 48px;
+    padding: 6px;
+    font-size: 0.94rem;
+  }
+
+  .game-actions {
+    grid-template-columns: 1fr 92px;
+  }
+
+  .next-button,
+  .reset-button {
+    min-height: 42px;
+  }
+
+  .feedback-box {
+    padding: 10px;
+  }
+
+  .feedback-box p {
+    line-height: 1.45;
+  }
+
+  .feedback-box.correct,
+  .feedback-box.wrong {
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    z-index: 55;
+    box-shadow: 0 20px 54px rgba(24, 38, 52, 0.24);
+  }
+
+  .celebration {
+    min-width: min(86vw, 330px);
+    padding: 20px 18px;
+  }
+
+  .celebration strong {
+    font-size: clamp(2.4rem, 15vw, 4rem);
   }
 
   .top-nav a {
