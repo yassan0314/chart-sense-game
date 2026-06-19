@@ -342,6 +342,7 @@ function startTimer() {
 
 function updateGamePanel() {
   const scenario = scenarios[roundIndex];
+  document.querySelector("#game").classList.remove("is-answered");
   document.querySelector("#stageLabel").textContent = `Stage ${currentStage}`;
   document.querySelector("#stageTitle").textContent = stageTitle();
   document.querySelector("#missionName").textContent = scenario.mission;
@@ -403,6 +404,7 @@ function chooseAnswer(choice) {
 
   const prefix = correct ? "正解。" : choice === "timeout" ? "時間切れ。" : "惜しい。";
   document.querySelector("#feedbackBox").className = `feedback-box ${correct ? "correct" : "wrong"}`;
+  document.querySelector("#game").classList.add("is-answered");
   document.querySelector("#feedbackText").textContent = `${prefix} ${scenario.explanation}`;
   document.querySelector("#resultTitle").textContent = correct ? `+${gained} pts` : lives === 0 ? "Game Over" : "Life -1";
   document.querySelector("#resultMeta").textContent = correct

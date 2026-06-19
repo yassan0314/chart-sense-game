@@ -1318,9 +1318,28 @@ footer {
     position: fixed;
     left: 10px;
     right: 10px;
-    bottom: 10px;
+    bottom: 86px;
     z-index: 55;
+    max-height: 28svh;
+    overflow: auto;
     box-shadow: 0 20px 54px rgba(24, 38, 52, 0.24);
+  }
+
+  #game.is-answered {
+    padding-bottom: 154px;
+  }
+
+  #game.is-answered .game-actions {
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    z-index: 58;
+    padding: 8px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 18px 42px rgba(24, 38, 52, 0.18);
   }
 
   .celebration {

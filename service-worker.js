@@ -1,9 +1,9 @@
-const CACHE_NAME = "chart-sense-game-v2";
+const CACHE_NAME = "chart-sense-game-v5";
 const ASSETS = [
   "./",
   "./index.html",
-  "./style.css",
-  "./script.js",
+  "./style.css?v=5",
+  "./script.js?v=5",
   "./manifest.webmanifest",
   "./icon.svg"
 ];
